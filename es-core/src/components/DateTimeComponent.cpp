@@ -6,13 +6,13 @@
 
 DateTimeComponent::DateTimeComponent(Window* window) : TextComponent(window), mDisplayRelative(false)
 {
-	setFormat("%m/%d/%Y");
+	setFormat("%d/%m/%Y");
 }
 
 DateTimeComponent::DateTimeComponent(Window* window, const std::string& text, const std::shared_ptr<Font>& font, unsigned int color, Alignment align,
 	Vector3f pos, Vector2f size, unsigned int bgcolor) : TextComponent(window, text, font, color, align, pos, size, bgcolor), mDisplayRelative(false)
 {
-	setFormat("%m/%d/%Y");
+	setFormat("%d/%m/%Y");
 }
 
 void DateTimeComponent::setValue(const std::string& val)
@@ -50,7 +50,7 @@ std::string DateTimeComponent::getDisplayString() const
 	if (mDisplayRelative) {
 		//relative time
 		if(mTime.getTime() == 0)
-			return "never";
+			return "Jamais";
 
 		Utils::Time::DateTime now(Utils::Time::now());
 		Utils::Time::Duration dur(now.getTime() - mTime.getTime());
@@ -58,19 +58,19 @@ std::string DateTimeComponent::getDisplayString() const
 		char buf[64];
 
 		if(dur.getDays() > 0)
-			sprintf(buf, "%d day%s ago", dur.getDays(), (dur.getDays() > 1) ? "s" : "");
+			sprintf(buf, "Il y a %d jour%s", dur.getDays(), (dur.getDays() > 1) ? "s" : "");
 		else if(dur.getHours() > 0)
-			sprintf(buf, "%d hour%s ago", dur.getHours(), (dur.getHours() > 1) ? "s" : "");
+			sprintf(buf, "Il y a %d heure%s", dur.getHours(), (dur.getHours() > 1) ? "s" : "");
 		else if(dur.getMinutes() > 0)
-			sprintf(buf, "%d minute%s ago", dur.getMinutes(), (dur.getMinutes() > 1) ? "s" : "");
+			sprintf(buf, "Il y a %d minute%s", dur.getMinutes(), (dur.getMinutes() > 1) ? "s" : "");
 		else
-			sprintf(buf, "%d second%s ago", dur.getSeconds(), (dur.getSeconds() > 1) ? "s" : "");
+			sprintf(buf, "Il y a %d seconde%s", dur.getSeconds(), (dur.getSeconds() > 1) ? "s" : "");
 
 		return std::string(buf);
 	}
 
 	if(mTime.getTime() == 0)
-		return "unknown";
+		return "Inconnu";
 
 	return Utils::Time::timeToString(mTime.getTime(), mFormat);
 }
