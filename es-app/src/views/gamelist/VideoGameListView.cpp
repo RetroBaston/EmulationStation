@@ -94,11 +94,11 @@ VideoGameListView::VideoGameListView(Window* window, FileData* root) :
 	mLblPlayers.setText("Nb de joueurs: ");
 	addChild(&mLblPlayers);
 	addChild(&mPlayers);
-	mLblLastPlayed.setText("Dernier lancement: ");
+	mLblLastPlayed.setText("Joué récemment: ");
 	addChild(&mLblLastPlayed);
 	mLastPlayed.setDisplayRelative(true);
 	addChild(&mLastPlayed);
-	mLblPlayCount.setText("Nb de lancements: ");
+	mLblPlayCount.setText("Nb de parties: ");
 	addChild(&mLblPlayCount);
 	addChild(&mPlayCount);
 

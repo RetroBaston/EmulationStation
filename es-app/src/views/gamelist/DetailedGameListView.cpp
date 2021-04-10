@@ -51,29 +51,29 @@ DetailedGameListView::DetailedGameListView(Window* window, FileData* root) :
 	addChild(&mImage);
 
 	// metadata labels + values
-	mLblRating.setText("Rating: ");
+	mLblRating.setText("Score: ");
 	addChild(&mLblRating);
 	addChild(&mRating);
-	mLblReleaseDate.setText("Released: ");
+	mLblReleaseDate.setText("Sortie: ");
 	addChild(&mLblReleaseDate);
 	addChild(&mReleaseDate);
-	mLblDeveloper.setText("Developer: ");
+	mLblDeveloper.setText("Développeur: ");
 	addChild(&mLblDeveloper);
 	addChild(&mDeveloper);
-	mLblPublisher.setText("Publisher: ");
+	mLblPublisher.setText("Editeur: ");
 	addChild(&mLblPublisher);
 	addChild(&mPublisher);
 	mLblGenre.setText("Genre: ");
 	addChild(&mLblGenre);
 	addChild(&mGenre);
-	mLblPlayers.setText("Players: ");
+	mLblPlayers.setText("Nb de joueurs: ");
 	addChild(&mLblPlayers);
 	addChild(&mPlayers);
-	mLblLastPlayed.setText("Last played: ");
+	mLblLastPlayed.setText("Joué récemment: ");
 	addChild(&mLblLastPlayed);
 	mLastPlayed.setDisplayRelative(true);
 	addChild(&mLastPlayed);
-	mLblPlayCount.setText("Times played: ");
+	mLblPlayCount.setText("Nb de parties: ");
 	addChild(&mLblPlayCount);
 	addChild(&mPlayCount);
 
